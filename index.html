@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>ESP32-CAM LIVE</title>
+</head>
+
+<body>
+
+<h1>ESP32-CAM LIVE</h1>
+
+<img id="cam" width="640">
+
+<script>
+
+function updateCam(){
+  document.getElementById("cam").src =
+  "https://raw.githubusercontent.com/StoffeB/webserverhosting2/main/cam.jpg?t="
+  + Date.now();
+}
+
+updateCam();
+
+setInterval(updateCam,1000);
+
+</script>
+
+</body>
+</html>
