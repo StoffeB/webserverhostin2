@@ -1,8 +1,27 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 <title>ESP32-CAM LIVE</title>
+
+<script>
+function refreshCamera() {
+
+  let img = document.getElementById("cam");
+
+  img.src =
+  "cam.jpg?nocache=" + new Date().getTime();
+
+}
+
+window.onload = refreshCamera;
+
+setInterval(refreshCamera, 1000);
+
+</script>
+
 </head>
+
 
 <body>
 
@@ -10,19 +29,6 @@
 
 <img id="cam" width="640">
 
-<script>
-
-function updateCam(){
-  document.getElementById("cam").src =
-  "https://raw.githubusercontent.com/StoffeB/webserverhosting2/main/cam.jpg?t="
-  + Date.now();
-}
-
-updateCam();
-
-setInterval(updateCam,1000);
-
-</script>
-
 </body>
+
 </html>
